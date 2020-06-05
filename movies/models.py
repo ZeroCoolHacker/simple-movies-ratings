@@ -55,3 +55,9 @@ class Movie(models.Model):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('movies:detail', kwargs={'pk': self.pk})
+
+    def get_genres_string(self):
+        l = [] 
+        for _ in self.genres.all():
+            l.append(_.name)
+        return ','.join(l)
