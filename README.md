@@ -17,9 +17,17 @@ Then you navigate to the base directory of the project and install the requireme
 > cd simple-movies-ratings
 > pip install -r requirements.txt
 ```
-And finally you migrate the database, create a super user, run tests, and run the server
+And finally you migrate the database
 ```bash
 > python manage.py migrate
+```
+To Load Demo Data provided by Omni Apps, Run the following command
+```
+> python manage.py loadjsontodb
+```
+
+Now create a super user, run Tests, and run the server
+```
 > python manage.py createsuperuser
 > python manage.py test
 > python manage.py runserver
@@ -54,6 +62,7 @@ The server should be responding at localhost:8000
 - [x] Create Suitable Models
 - [x] Filtered Results via javascript
 - [x] Customized Admin Views
+- [x] Added Management Command to Load Demo Data into Database
 - [x] Used latest syntax
 - [x] Written TestCases for all possible scenerios
 - [x] Minimize the number of queries for admin list views
