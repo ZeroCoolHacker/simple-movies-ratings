@@ -60,4 +60,6 @@ class Movie(models.Model):
         l = [] 
         for _ in self.genres.all():
             l.append(_.name)
-        return ','.join(l)
+        return ', '.join(l)
+    get_genres_string.short_description = 'Genre'
+    get_genres_string.admin_order_field = 'genres'

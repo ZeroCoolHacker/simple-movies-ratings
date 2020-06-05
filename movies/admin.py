@@ -25,15 +25,10 @@ class MovieAdmin(admin.ModelAdmin):
         'user_rating'
         )
     list_filter = (
-        'genres',
         'language',
-        'user_rating'
+        'user_rating',
+        'genres'
         )
-    # inlines = [
-    #     Inline,
-    # ]
-    # raw_id_fields = ('',)
-    # readonly_fields = ('',)
-    # search_fields = ('',)
-    # date_hierarchy = ''
-    # ordering = ('',)
+    filter_horizontal = ('genres',)
+    search_fields = ('name',)
+    ordering = ('name',)
