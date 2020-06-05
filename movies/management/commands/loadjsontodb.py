@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = 'Loads the provided movie.json data into the database'
 
     def handle(self, *args, **kwargs):
-        filename = 'movies.json'
+        filename = 'demodata/movies.json'
         with open(filename) as f:
             data = json.load(f)
             for movie in data:
@@ -21,5 +21,5 @@ class Command(BaseCommand):
                 print(f"mpaaRating-type: {movie['mpaaRating']['type']}")
                 print(f"mpaaRating-label: {movie['mpaaRating']['label']}")
                 print(f"userRating: {movie['userRating']}")
-                
+            print(f"Total Elements in this file were {len(data)}")
                 
