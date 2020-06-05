@@ -4,12 +4,14 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 MPAA_Ratings_CHOICES = [
     ('G', 'G'),
     ('PG', 'PG'),
-    ('PG-13', 'PG-13'),
+    ('PG13', 'PG13'),
     ('R', 'R'),
     ('NC-17', 'NC-17'),
+    ('NC16', 'NC16'),
     ('M18', 'M18'),
     ('R21', 'R21'),
-    ('M', 'M')
+    ('M', 'M'),
+    ('M18', 'M18')
 ]
 class Genre(models.Model):
     """Model Definition for Genre"""
