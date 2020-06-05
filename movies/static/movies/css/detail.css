@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Base Styles */
+h1,h2,h3,h4,p,a {
+  font-family: 'Arimo', sans-serif;
+}
+
+main {
+  width: 80%;
+  margin: 10vh auto;
+}
+
+main h1:first-child {
+  font-weight: 700;
+  line-height: 63px;
+  padding-bottom: 10px;
+}
+
+main>hr {
+  margin-top: 8vh;
+  margin-bottom: 3vh;
+  opacity: 0.3;
+}
+
+
+main #movie-detail {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 600px){
+  main #movie-detail {
+    grid-template-columns: 1fr;
+  }
+  main {
+    width: 90%;
+  }
+}
+
+main #movie-detail > img {
+  width: 100%;
+}

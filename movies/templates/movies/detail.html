@@ -1,0 +1,36 @@
+{% extends 'movies/partials/base.html' %}
+{% load static %}
+
+
+{% block title %} {{ movie.name }} {% endblock title %}
+    
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'movies/css/detail.css' %}">
+{% endblock extra_head %}
+
+
+{% block content %}
+<main>
+    <h1>Movie Listings @ GV Cinema</h1>
+    <a href="{% url 'movies:list' %}">Back</a>
+    <h2>{{ movie.name }}</h2>
+    <p>({{ movie.mpaa_rating.type }}: {{ movie.mpaa_rating.label }})</p>
+
+    <hr>
+
+    <div id="movie-detail">
+      <img src="{{ movie.image.url }}">
+      <div class="movie-info">
+        <h2>Details</h2>
+        <p>Genre: {{ movie.get_genres_string }}</p>
+        <p>Language: {{ movie.language}}</p>
+        <p>Duration: {{ movie.duration }} Minutes</p>
+        <p>User Rating: {{ movie.user_rating }}</p>
+
+        <h2>Synopsis</h2>
+        <p>{{ movie.description }}</p>
+      </div>
+    </div>
+  </main>
+{% endblock content %}
