@@ -6,6 +6,7 @@ from movies.models import Movie, MPAA_Rating
 
 
 class TestViews(TestCase):
+
     def setUp(self):
         self.client = Client()
         self.list_url = reverse("movies:list")
@@ -36,7 +37,6 @@ class TestViews(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "movies/detail.html")
-
 
     def test_movie_wrong_slug_404(self):
         response = self.client.get(self.wrong_detail_url)

@@ -5,6 +5,7 @@ from movies.models import Movie, MPAA_Rating, Genre
 
 
 class TestModels(TestCase):
+
     def setUp(self):
         self.mpaa_rating = MPAA_Rating.objects.create(type="PG", label="Test Label")
         self.genre_1 = Genre.objects.create(name="Action")
@@ -27,7 +28,6 @@ class TestModels(TestCase):
         self.movie_1.genres.add(self.genre_1)
         self.movie_1.genres.add(self.genre_2)
         self.movie_1.genres.add(self.genre_3)
-
 
     def test_movie_get_genre_list_string(self):
         expected = "Action, Romantic, Comedy"
